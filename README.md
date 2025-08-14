@@ -27,7 +27,7 @@ Step 3: Print Area
 
 **Flowchart:**
 
-
+```
 ┌───────────┐
 │ Start │
 └─────┬─────┘
@@ -48,7 +48,7 @@ Step 3: Print Area
 │ End │
 └───────────┘
 
-
+```
 ---
 
 ## Q2. Short Note on Algorithm with an Example
@@ -65,22 +65,23 @@ An **algorithm** is a precise sequence of instructions to solve a problem and mu
 Linear search scans a list to find a target element.
 
 **Pseudocode:**
+```
 for i from 1 to n do
 if A[i] == X then
 return i
 return "Not Found"
-
+```
 text
 
 **Diagram:**
+```
 Index: 0 1 2 3 4 (Array A)
 Value:
 
 Suppose X=8:
 Start from index 0 → 2≠8, 5≠8, 7≠8, 8=8 (FOUND at index 3)
 
-text
-
+```
 ---
 
 ## Q3. Types of Complexity in Data Structures
@@ -123,11 +124,11 @@ Complexity lets us predict scalability and feasibility. It guides us to choose t
 5. **Modularity:** Promotes code reusability by designing data structures as independent, modular components.
 
 **Diagram: Linked List vs Array Layout**
-
+```
 Array: [A][B][C][D] (contiguous)
 LinkedList: [A]->[B]->[C]->[D] (scattered in memory, each node points to the next)
 
-text
+```
 
 ---
 
@@ -141,12 +142,15 @@ text
 - **O(2ⁿ), O(n!):** Exponential/Factorial – Brute force, impractical for large n.
 
 **Diagram: Growth Rates (Conceptual)**
+
+```
 | *
 | * * (O(n^2), O(2^n))
 | * * * (O(n log n))
 |* * (O(n))
 |____*___________ n
 O(1) O(log n) O(n) etc.
+```
 
 
 ---
@@ -156,17 +160,18 @@ O(1) O(log n) O(n) etc.
 A **recursive algorithm** calls itself with smaller subproblems.
 
 **Example: Factorial**
+```
 function fact(n):
 if n == 0 then
 return 1
 else
 return n × fact(n-1)
-
+```
 - **Time Complexity:** O(n) – One call per decrement until 0.
 - **Space Complexity:** O(n) – Due to recursion stack.
 
 **Diagram: Recursion Tree for fact(4)**
-
+```
 fact(4)
 |
 └─> 4 × fact(3)
@@ -179,7 +184,7 @@ fact(4)
 |
 └─> 1
 
-
+```
 ---
 
 ## Q8. Non-Recursive Algorithm with Example
@@ -195,14 +200,14 @@ return result
 - **Space Complexity:** O(1) (no recursion stack)
 
 **Diagram: Iterative Accumulation (n=4)**
-
+```
 i=1: result=1×1=1
 i=2: result=1×2=2
 i=3: result=2×3=6
 i=4: result=6×4=24
 Final: result=24
 
-
+```
 ---
 
 ## Q9. Short Note on Linked List
@@ -218,11 +223,11 @@ A **linked list** consists of nodes, each holding data and a pointer to the next
 - Extra memory needed for pointers.
 
 **Diagram: Singly Linked List**
-
+```
 [Data|Next] -> [Data|Next] -> [Data|Next] -> NULL
 10 20 30
 
-
+```
 ---
 
 ## Q10. Doubly Linked List with Diagram
@@ -236,15 +241,17 @@ A **doubly linked list** node contains pointers to both next and previous nodes.
 text
 
 **Diagram:**
+```
 NULL ← ⇄ ⇄ → NULL
 
 text
 - `head.prev = NULL`
 - `tail.next = NULL`
-
+```
 ---
 
 ## Q11. Algorithm: Insert Node at Beginning of Doubly Linked List
+```
 procedure InsertAtBeginning(head, value):
 newNode ← allocate Node
 newNode.data ← value
@@ -255,22 +262,22 @@ head.prev ← newNode
 head ← newNode
 return head
 
-
+```
 **Diagram (Before and After Insertion):**
-
+```
 Before:
 NULL ← ⇄
 
 After inserting 10:
 NULL ← ⇄ ⇄
-
+```
 
 ---
 
 ## Q12. Algorithm: Delete Node from Beginning of Doubly Linked List
 
 **Pseudocode:**
-
+```
 procedure DeleteAtBeginning(head):
 if head = NULL then return NULL
 toDelete ← head
@@ -279,21 +286,22 @@ if head ≠ NULL then head.prev ← NULL
 free(toDelete)
 return head
 
-
+```
 **Diagram (Before and After Deletion):**
-
+```
 Before:
 NULL ← ⇄ ⇄
 
 After deleting 10:
 NULL ← ⇄
+```
 
-text
 ## Q13. Algorithm: Insert Node at Given Position in Singly Linked List (with Diagram & Detailed Steps)
 
 **Goal:** Insert a new node at a specified position (1-based index) in a singly linked list.
 
 **Pseudocode:**
+```
 procedure InsertAtPosition(head, value, pos):
 newNode ← allocate Node
 newNode.data ← value
@@ -326,8 +334,7 @@ After:
 → → → → NULL
 Inserted at 2nd position
 
-text
-
+```
 ---
 
 ## Q14. Array vs. Linked List (5 Points Side-by-Side Table)
@@ -341,11 +348,12 @@ text
 | Overhead       | No extra pointers       | Extra pointer(s) per node      |
 
 **Diagram:**
+```
 Array: [A][B][C][D] (Memory is back-to-back)
 LinkedList: [A]→[B]→[C]→[D] (Data scattered, linked by pointers)
 
-text
 
+```
 ---
 
 ## Q15. Circular Linked List with Diagram
@@ -371,6 +379,7 @@ text
 ## Q16. Delete Last Node in Singly Linked List (with Diagram & Steps)
 
 **Pseudocode:**
+```
 procedure DeleteLast(head):
 if head = NULL then return NULL
 if head.next = NULL then
@@ -382,7 +391,7 @@ free(temp.next)
 temp.next ← NULL
 return head
 
-text
+```
 
 **Detailed Steps:**
 1. Check if the list is empty or has only one node.
@@ -390,13 +399,14 @@ text
 3. Free (delete) last node and set previous node's `next` to NULL.
 
 **Diagram:**
+```
 Before: → → → NULL
 ^ ^
 | Last node to remove
 After: → → NULL
 (Now, 20 is tail)
 
-text
+```
 
 ---
 
@@ -410,6 +420,7 @@ A **stack** is a linear data structure that follows the Last-In, First-Out (**LI
 - Peek: View topmost item without removing it.
 
 **Diagram:**
+```
 +------+
 | 30 | ← Top (last pushed, first popped)
 +------+
@@ -418,8 +429,8 @@ A **stack** is a linear data structure that follows the Last-In, First-Out (**LI
 | 10 |
 +------+
 (Bottom)
+```
 
-text
 
 **Real-World Analogy:** Stack of plates in a cafeteria – take from top, add to top.
 
@@ -436,6 +447,7 @@ text
 **All main operations (push, pop, peek) run in O(1) time.**
 
 **Diagram: Push & Pop**
+```
 Initial Stack: empty
 
 push(10): (top)
@@ -444,7 +456,7 @@ push(30): (top) → →
 
 pop(): removes 30, stack is now →
 
-text
+```
 
 ---
 
