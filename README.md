@@ -361,6 +361,7 @@ LinkedList: [A]→[B]→[C]→[D] (Data scattered, linked by pointers)
 A **circular linked list** is a variation where the last node points back to the first node, creating a loop.
 
 **Diagram:**  
+```
 +-------+ +-------+ +-------+
 | 10 | ---> | 20 | ---> | 30 |
 +-------+ +-------+ +-------+
@@ -368,7 +369,7 @@ A **circular linked list** is a variation where the last node points back to the
 |______________________________|
 (Last node points to head)
 
-text
+```
 
 **Key Points:**
 - No "NULL" at end; traversal can continue indefinitely if not careful.
